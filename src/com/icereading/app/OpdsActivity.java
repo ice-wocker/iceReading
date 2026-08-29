@@ -27,16 +27,12 @@ public class OpdsActivity extends Activity {
     private BaseAdapter adapter;
 
     /**
-     * 6 个默认 OPDS 源(2026-08 验证可用)
+     * v2.0:不再内置失效的公开 OPDS 源(2026 几乎都 403/404)
+     * LibriVox 已集成到 DiscoverView(单独选项)
+     * 这里只放用户自定义源管理
      */
     public static final String[][] DEFAULT_SOURCES = new String[][]{
-        // name, url
-        {"古登堡 Project Gutenberg", "https://www.gutenberg.org/ebooks/opds/"},
-        {"Standard Ebooks", "https://standardebooks.org/opds/"},
-        {"LibriVox(免费有声书)", "https://librivox.org/api/feed/audiobooks/"},
-        {"Feedbooks(公版/原创)", "https://www.feedbooks.com/books/opds"},
-        {"ManyBooks", "https://manybooks.net/opds/"},
-        {"OPDS.io 发现(目录聚合)", "https://opds.io/"},
+        // name, url  (留空,让用户自己填)
     };
 
     @Override
@@ -85,18 +81,13 @@ public class OpdsActivity extends Activity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 new android.app.AlertDialog.Builder(OpdsActivity.this)
-                    .setTitle("恢复默认?")
-                    .setMessage("将清空所有 OPDS 源并恢复 6 个默认源")
-                    .setPositiveButton("确定", new android.content.DialogInterface.OnClickListener() {
+                    .setTitle("清空所有自定义源?")
+                    .setMessage("v2.0: 公开 OPDS 源(古登堡/Standard Ebooks/Feedbooks 等)已全部失效或被墙,改用「全网搜索」+ 您的内网 Calibre 服务器。\n\n将清空所有用户自定义源。此操作不可恢复。")
+                    .setPositiveButton("清空", new android.content.DialogInterface.OnClickListener() {
                         public void onClick(android.content.DialogInterface d, int w) {
                             for (Models.OpdsSource s : data) BookRepository.get(OpdsActivity.this).deleteOpdsSource(s.id);
-                            for (String[] ds : DEFAULT_SOURCES) {
-                                Models.OpdsSource s = new Models.OpdsSource();
-                                s.name = ds[0]; s.url = ds[1]; s.enabled = 1;
-                                BookRepository.get(OpdsActivity.this).addOpdsSource(s);
-                            }
                             refresh();
-                            Toast.makeText(OpdsActivity.this, "已恢复 " + DEFAULT_SOURCES.length + " 个默认源", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(OpdsActivity.this, "已清空", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .setNegativeButton("取消", null)
@@ -104,15 +95,7 @@ public class OpdsActivity extends Activity {
             }
         });
         refresh();
-        // 如果没源,自动添加默认
-        if (data.isEmpty()) {
-            for (String[] ds : DEFAULT_SOURCES) {
-                Models.OpdsSource s = new Models.OpdsSource();
-                s.name = ds[0]; s.url = ds[1]; s.enabled = 1;
-                BookRepository.get(this).addOpdsSource(s);
-            }
-            refresh();
-        }
+        // v2.0: 不再自动添加默认源(已全部失效)
     }
 
     public void refresh() {

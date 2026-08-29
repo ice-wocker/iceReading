@@ -86,18 +86,20 @@ assets/
 - **HTTP** — `HttpURLConnection`(无 OkHttp/Retrofit 依赖)
 - **下载** — 原生 `Range` 头支持断点续传
 
-## 📚 内置 OPDS 源(2026-08 验证)
+## 📚 数据源(v2.0)
 
-| 名称 | URL |
-|---|---|
-| 古登堡 Project Gutenberg | `https://www.gutenberg.org/ebooks/opds/` |
-| Standard Ebooks | `https://standardebooks.org/opds/` |
-| LibriVox(免费有声书) | `https://librivox.org/api/feed/audiobooks/` |
-| Feedbooks(公版/原创) | `https://www.feedbooks.com/books/opds` |
-| ManyBooks | `https://manybooks.net/opds/` |
-| OPDS.io 发现(目录聚合) | `https://opds.io/` |
+由于 2026 年所有公开 OPDS 端点(古登堡/Standard Ebooks/Feedbooks/ManyBooks/OPDS.io/番茄/笔趣/七猫/起点)均失效或被墙,**v2.0 改为诚实可用路线**:
 
-> 部分老牌源(Open Library / 忠实书屋 / 书格 / FadedPage)在 2026 年因 Cloudflare/DNS 等原因已不可用,后续可能恢复。
+| 类型 | 描述 | 状态 |
+|---|---|---|
+| 📚 **本地书库** | 始终可用,SQLite 搜索 | ✅ 真稳 |
+| 🌐 **全网搜索**(必应/Google) | 找书 → 跳浏览器下载 | ✅ 真稳(免 key) |
+| 🎧 **LibriVox** | 英文免费有声书 | ✅ 200 OK 真稳 |
+| 🔌 **自定义 OPDS** | 您内网 Calibre 服务器 | ✅ 真稳 |
+
+> **为什么不直连番茄/笔趣/七猫/起点**:这些站都是登录墙 + 接口签名加密(SSR/JS 异步 + 加密请求),纯客户端无法稳定直连。
+> 番茄 web SSR 是 React + 监控 SDK,章节内容走签名 fetch,即使真机上抓得到也得反编译签名算法——这已超出"开源阅读器"范畴。
+> **推荐做法**:在您的电脑跑 [Calibre](https://calibre-ebook.com/) → 启动 OPDS 服务器 → 手机上添加您的内网 OPDS 源,永久使用。
 
 可在「发现 → +」中**添加自定义 OPDS 源**(支持 Basic Auth / Bearer Token)。
 

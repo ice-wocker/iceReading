@@ -60,5 +60,9 @@
     <string name="settings_library">书架</string>
     <string name="settings_reader">阅读</string>
     <string name="settings_network">网络</string>
-    <string name="settings_about_content">冰读 iceReading v1.0\n纯 Java 无依赖 EPUB 阅读器\nAPK &lt; 500KB\n\n仓库: ice-wocker/iceReading\nLicense: MIT</string>
+    <string name="settings_about_content">冰读 iceReading v2.0\n纯 Java 无依赖 EPUB 阅读器\nAPK &lt; 100KB\n\nv2.0 新增:\n• 全网搜索(必应/Google)\n• LibriVox 英文有声书\n• 友好错误信息\n• 本地搜索始终可用\n\n仓库: ice-wocker/iceReading\nLicense: MIT</string>
+    <string name="discover_local">📚 本地书库(本地搜索)</string>
+    <string name="discover_web">🌐 全网搜索(必应/Google)</string>
+    <string name="discover_librivox">🎧 LibriVox 英文有声书</string>
+    <string name="discover_opds">🔌 自定义 OPDS</string>
 </resources>
