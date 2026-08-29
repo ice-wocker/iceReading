@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/card_bg"
+            android:gravity="center_vertical">
+            <EditText android:id="@+id/etSearch"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:hint="🔍 搜索书名/作者"
+                android:textColor="@color/fg" android:textColorHint="@color/muted"
+                android:background="@color/bg" android:padding="8dp"
+                android:inputType="text" android:imeOptions="actionSearch" />
+            <Button android:id="@+id/btnImport"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📂" android:textSize="18sp"
+                android:textColor="@color/fg" android:background="@color/divider"
+                android:layout_marginStart="4dp" />
+            <Button android:id="@+id/btnFilter"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🔀" android:textSize="18sp"
+                android:textColor="@color/fg" android:background="@color/divider"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+        <TextView android:id="@+id/tvStats"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="6dp" android:paddingStart="12dp"
+            android:textColor="@color/muted" android:textSize="11sp"
+            android:text="📚 0 本书" />
+        <GridView android:id="@+id/gvBooks"
+            android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+            android:numColumns="2" android:verticalSpacing="6dp" android:horizontalSpacing="6dp"
+            android:padding="6dp" android:scrollbars="none" />
+    </LinearLayout>
+    <TextView android:id="@+id/tvEmpty"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="32dp"
+        android:gravity="center"
+        android:textColor="@color/muted" android:textSize="14sp"
+        android:text="书架空空\n点 📂 导入 EPUB 文件\n或切换到「发现」浏览在线书库"
+        android:visibility="gone" />
+</FrameLayout>

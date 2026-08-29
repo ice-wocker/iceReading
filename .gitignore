@@ -1,0 +1,31 @@
+# Build artifacts
+build/
+icereading.apk
+icereading-unsigned.apk
+icereading-aligned.apk
+keystore.jks
+*.jks
+
+# Android generated
+R.java
+gen/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+*.swp
+*~
+*.bak
+
+# Gradle
+.gradle/
+build.gradle
+gradlew
+gradlew.bat
+gradle.properties
+settings.gradle
+
+# Logs
+*.log

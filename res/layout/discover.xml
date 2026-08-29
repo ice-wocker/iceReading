@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/card_bg"
+        android:gravity="center_vertical">
+        <Spinner android:id="@+id/spSource"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:popupBackground="@color/card_bg" />
+        <Button android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔄"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginStart="4dp" />
+        <Button android:id="@+id/btnAddSource"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="+"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginStart="4dp" />
+        <Button android:id="@+id/btnSearch"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔍"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+    <EditText android:id="@+id/etSearch"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="搜索书名/作者..."
+        android:textColor="@color/fg" android:textColorHint="@color/muted"
+        android:background="@color/card_bg" android:padding="8dp"
+        android:inputType="text" android:visibility="gone" android:imeOptions="actionSearch" />
+    <ListView android:id="@+id/lvEntries"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:divider="@color/divider" android:dividerHeight="1dp" />
+    <TextView android:id="@+id/tvEmpty"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:padding="32dp" android:gravity="center"
+        android:textColor="@color/muted" android:textSize="14sp"
+        android:text="暂无内容\n点 + 添加 OPDS 源" />
+</LinearLayout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="⚙️ 设置" android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/accent" android:padding="8dp" />
+
+        <!-- 阅读 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📖 阅读" android:textSize="14sp" android:textColor="@color/fg"
+            android:textStyle="bold" android:paddingTop="12dp" android:paddingBottom="4dp" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="主题" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <RadioGroup android:id="@+id/rgTheme" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="4dp">
+            <RadioButton android:id="@+id/rbDay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="日间" android:textColor="@color/fg" android:checked="true" />
+            <RadioButton android:id="@+id/rbPaper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="护眼" android:textColor="@color/fg" />
+            <RadioButton android:id="@+id/rbSepia" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="羊皮" android:textColor="@color/fg" />
+            <RadioButton android:id="@+id/rbNight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="夜间" android:textColor="@color/fg" />
+            <RadioButton android:id="@+id/rbDark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="深邃" android:textColor="@color/fg" />
+        </RadioGroup>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="字体大小" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <SeekBar android:id="@+id/sbFont" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="32" android:progress="18" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="行距" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <SeekBar android:id="@+id/sbLine" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="25" android:progress="15" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="段距" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <SeekBar android:id="@+id/sbPara" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="32" android:progress="8" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="页边距" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <SeekBar android:id="@+id/sbMargin" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="64" android:progress="16" />
+
+        <Button android:id="@+id/btnFont"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🅰 自定义字体(导入 .ttf/.otf)"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginTop="8dp" />
+
+        <!-- 行为 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🎮 行为" android:textSize="14sp" android:textColor="@color/fg"
+            android:textStyle="bold" android:paddingTop="12dp" android:paddingBottom="4dp" />
+
+        <Switch android:id="@+id/swKeep" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="屏幕常亮" android:textColor="@color/fg" android:padding="4dp" android:checked="true" />
+        <Switch android:id="@+id/swFull" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="全屏沉浸" android:textColor="@color/fg" android:padding="4dp" android:checked="true" />
+        <Switch android:id="@+id/swVol" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="音量键翻页" android:textColor="@color/fg" android:padding="4dp" android:checked="true" />
+        <Switch android:id="@+id/swTap" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="点屏翻页(左右/中央)" android:textColor="@color/fg" android:padding="4dp" android:checked="true" />
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="翻页动画" android:textColor="@color/muted" android:textSize="12sp" android:paddingTop="4dp" />
+        <RadioGroup android:id="@+id/rgAnim" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="4dp">
+            <RadioButton android:id="@+id/rbAnimNone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="无" android:textColor="@color/fg" android:checked="true" />
+            <RadioButton android:id="@+id/rbAnimSlide" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="滑动" android:textColor="@color/fg" />
+            <RadioButton android:id="@+id/rbAnimSim" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="仿真" android:textColor="@color/fg" />
+        </RadioGroup>
+
+        <!-- 网络 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🌐 网络" android:textSize="14sp" android:textColor="@color/fg"
+            android:textStyle="bold" android:paddingTop="12dp" android:paddingBottom="4dp" />
+        <Button android:id="@+id/btnOpds"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📚 OPDS 源管理"
+            android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+
+        <!-- 数据 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="💾 数据" android:textSize="14sp" android:textColor="@color/fg"
+            android:textStyle="bold" android:paddingTop="12dp" android:paddingBottom="4dp" />
+        <Button android:id="@+id/btnExport"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📤 导出书签/进度"
+            android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+        <Button android:id="@+id/btnImportData"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📥 导入书签/进度"
+            android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+        <Button android:id="@+id/btnClear"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="🗑️ 清空书架"
+            android:textColor="#FFFFFF" android:background="@color/err" android:layout_marginTop="4dp" />
+
+        <!-- 关于 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="ℹ️ 关于" android:textSize="14sp" android:textColor="@color/fg"
+            android:textStyle="bold" android:paddingTop="12dp" android:paddingBottom="4dp" />
+        <Button android:id="@+id/btnAbout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="📖 关于冰读"
+            android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+        <Button android:id="@+id/btnHelp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="❓ 使用帮助"
+            android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+    </LinearLayout>
+</ScrollView>

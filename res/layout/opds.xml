@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg"
+    android:padding="10dp">
+    <TextView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="📚 OPDS 源管理"
+        android:textSize="18sp" android:textColor="@color/accent" android:textStyle="bold"
+        android:padding="4dp" />
+    <ListView android:id="@+id/lvSources"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:divider="@color/divider" android:dividerHeight="1dp" />
+    <Button android:id="@+id/btnAdd"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="+ 添加 OPDS 源"
+        android:textColor="#FFFFFF" android:background="@color/accent" android:layout_marginTop="6dp" />
+    <Button android:id="@+id/btnReset"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="↩ 恢复默认 6 个源"
+        android:textColor="@color/fg" android:background="@color/divider" android:layout_marginTop="4dp" />
+</LinearLayout>
