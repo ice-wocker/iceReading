@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:background="@color/card_bg"
+        android:gravity="center_vertical">
+        <EditText android:id="@+id/etUrl"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:hint="https://... 小说章节 URL"
+            android:textColor="@color/fg" android:textColorHint="@color/muted"
+            android:background="@color/bg" android:padding="8dp"
+            android:inputType="textUri" android:imeOptions="actionGo" />
+        <Button android:id="@+id/btnGo"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="GO"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginStart="4dp" />
+        <Button android:id="@+id/btnCapture"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📥抓"
+            android:textColor="#FFFFFF" android:background="@color/accent"
+            android:layout_marginStart="4dp" />
+        <Button android:id="@+id/btnClose"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✕"
+            android:textColor="@color/fg" android:background="@color/divider"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+    <WebView android:id="@+id/web"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:background="@color/reader_bg" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:background="@color/card_bg">
+        <TextView android:id="@+id/tvStatus"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/muted" android:textSize="10sp" android:fontFamily="monospace"
+            android:maxLines="3" android:ellipsize="end" />
+    </LinearLayout>
+</LinearLayout>

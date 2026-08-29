@@ -52,5 +52,9 @@
             android:name=".PersonaActivity"
             android:exported="false"
             android:label="阅读偏好" />
+        <activity
+            android:name=".WebCaptureActivity"
+            android:exported="false"
+            android:label="在线抓取" />
     </application>
 </manifest>

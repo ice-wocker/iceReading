@@ -95,6 +95,16 @@ public class DiscoverView {
         btnRefresh.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { refresh(); } });
         btnAddSource.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { act.startActivity(new android.content.Intent(act, OpdsActivity.class)); } });
         btnSearch.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { etSearch.setVisibility(etSearch.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE); } });
+        Button btnWebCapture = (Button) root.findViewById(R.id.btnWebCapture);
+        btnWebCapture.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // 跳到 WebCaptureActivity,让用户输入章节 URL
+                // JS 自动提取章节正文 + 保存到书架
+                Intent i = new Intent(act, WebCaptureActivity.class);
+                i.putExtra("bookTitle", "在线书_" + System.currentTimeMillis());
+                act.startActivity(i);
+            }
+        });
         etSearch.setOnEditorActionListener(new android.widget.TextView.OnEditorActionListener() {
             public boolean onEditorAction(android.widget.TextView v, int actionId, android.view.KeyEvent event) {
                 String q = v.getText().toString().trim();
