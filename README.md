@@ -1,4 +1,12 @@
-# 冰读 iceReading
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue">
+  <img src="https://img.shields.io/badge/Android-21%2B-green">
+  <img src="https://img.shields.io/badge/Java-8-orange">
+  <img src="https://img.shields.io/badge/size-97KB-brightgreen">
+  <img src="https://img.shields.io/badge/dependencies-0-success">
+  <img src="https://img.shields.io/github/stars/ice-wocker/iceReading?style=social">
+</p>
+
 
 > 纯 Java / 无依赖 / 单 dex 的 Android EPUB 阅读器
 
