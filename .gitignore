@@ -1,5 +1,8 @@
 # Build artifacts
 build/
+*.apk
+*.apk.idsig
+*.idsig
 icereading.apk
 icereading-unsigned.apk
 icereading-aligned.apk
