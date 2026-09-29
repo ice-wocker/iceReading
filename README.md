@@ -25,11 +25,19 @@
 - 🛡️ **零追踪** — 无分析 SDK / 无统计上报 / 无广告
 - 🔍 **FTS5 全文搜索** (Android 11+ 启用,降级 LIKE)
 
+## 📥 下载
+
+**[最新 Release](https://github.com/ice-wocker/iceReading/releases/latest)** —— 直接下载 `icereading.apk`（97 KB，签名验证通过）
+
+```bash
+wget https://github.com/ice-wocker/iceReading/releases/latest/download/icereading.apk
+```
+
 ## 📦 APK 信息
 
 | 指标 | 数值 |
 |---|---|
-| 体积 | ~85 KB |
+| 体积 | 97 KB（实测，JDK 17 + build-tools 35 构建）|
 | 包名 | `com.icereading.app` |
 | 最低 SDK | 24 (Android 7.0) |
 | 目标 SDK | 33 (Android 13) |
@@ -44,12 +52,14 @@
 ## 🏗️ 构建
 
 ```bash
-# 依赖: ~/apkbuild/android.jar + Termux 的 aapt/dx/apksigner
-bash build.sh
-# 产物: icereading.apk (约 85KB)
+ANDROID_HOME=/path/to/android-sdk ./build.sh
+# 产物: icereading.apk (97 KB)
 ```
 
-构建工具复用作者其它项目的 `~/apkbuild/` 工具链。
+要求：**JDK 17 + Android SDK**（build-tools / platforms 任一版本均可，脚本自动挑选）。
+
+构建工具全部取自 `ANDROID_HOME`，不再依赖 Termux ——
+`aapt2` / `d8` / `zipalign` / `apksigner` 皆为官方 SDK 自带工具。
 
 ## 📂 项目结构
 
