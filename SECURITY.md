@@ -1,34 +1,30 @@
 # 安全策略
 
-## 支持的版本
-
-| 版本 | 支持状态 |
-|---|---|
-| 1.0.x | ✅ 当前 |
-
 ## 报告漏洞
 
-如发现安全漏洞,请通过 GitHub Issues 报告(标记 `security` 标签)。
-- 不要在公开 issue 中泄露具体利用代码
-- 描述:复现步骤 / 影响 / 建议修复
+如果你发现安全问题，**请不要直接开公开 Issue**。
 
-## 安全特性
+优先通过 GitHub 的 [私密漏洞报告](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) 功能提交；也可以发邮件到 `ice@users.noreply.github.com`。
 
-- **零云同步** — 所有数据仅本地 SQLite,不上传任何服务器
-- **零追踪** — 无分析 SDK,无统计上报,无广告
-- **零分析** — 不收集任何使用数据
-- **零权限滥用** — 只申请必要的 5 个权限
-- **本地加密** — 导入的字体/封面图片仅存应用私有目录
-- **OPDS 凭据** — 用户名/密码/Bearer Token 仅存 SharedPreferences(应用私有)
+请在报告里尽量包含：
 
-## 已知安全考虑
+- 受影响的版本 / 提交
+- 复现步骤或概念验证（PoC）
+- 影响范围（能读到什么、能改到什么）
+- 你建议的修复方向（可选）
 
-- 用户输入的 OPDS 源 URL 会被 `HttpURLConnection` 验证(只支持 http/https scheme)
-- 导入的 EPUB 文件在 cacheDir 私有目录,其他应用无法访问
-- WebView 加载本地文件(`file://` scheme),禁用了网络访问远程内容
+我会尽快确认并回复。修复发布后，如果愿意，会在致谢中列出你的名字。
 
-## 不在范围内
+## 设计上的安全取向
 
-- 第三方 OPDS 源的内容(由对应源负责)
-- 第三方字体文件(由来源方负责)
-- 用户自己导入的 EPUB 文件
+- 不申请非必要权限（例如离线类应用不申请 `INTERNET`）
+- 数据尽量只留在本机，不做静默上传
+- 不内置统计 / 追踪 / 广告 SDK
+
+## 支持的版本
+
+只维护默认分支上的最新代码。旧版本不再单独修复。
+
+## 注意
+
+本项目按"现状"提供，不对适用性或安全性作任何担保，详见 LICENSE。
