@@ -1,4 +1,6 @@
 <p align="center">
+  <img src="https://github.com/ice-wocker/iceReading/actions/workflows/android.yml/badge.svg">
+  <img src="https://img.shields.io/github/v/release/ice-wocker/iceReading">
   <img src="https://img.shields.io/badge/license-MIT-blue">
   <img src="https://img.shields.io/badge/Android-21%2B-green">
   <img src="https://img.shields.io/badge/Java-8-orange">
@@ -11,6 +13,8 @@
 > 纯 Java / 无依赖 / 单 dex 的 Android EPUB 阅读器
 
 一个完全开源、零云同步、零追踪、零广告的本地 EPUB 2/3 电子书阅读器。APK 不到 100KB,支持 OPDS 在线书库、本地扫描、5 套主题、自定义字体、书签高亮、阅读统计。
+
+A fully open-source, dependency-free local EPUB 2/3 reader for Android — under 100 KB, with OPDS discovery, themes, custom fonts, highlights and reading stats; no cloud, no tracking, no ads.
 
 ## ✨ 特性
 
@@ -175,3 +179,7 @@ MIT License - 见 [LICENSE](LICENSE) 文件
 ---
 
 **冰读 iceReading** — 让阅读回到阅读本身。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ice-wocker/iceReading&type=Date)](https://star-history.com/#ice-wocker/iceReading&Date)
